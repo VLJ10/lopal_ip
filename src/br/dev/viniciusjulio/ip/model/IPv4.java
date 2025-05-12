@@ -1,18 +1,27 @@
 package br.dev.viniciusjulio.ip.model;
 
 public class IPv4 {
-	
-	private static int oc1;
-	private static int oc2;
-	private static int oc3;
-	private static int oc4;
-	
-	public String[] ip = new String[5];
-	
-	
-	
-	
-		
-	
-	
+
+	String ip;
+
+	// Divide o Ip em partes usando o ponto como separador
+	String[] octetos = ip.split("\\.");
+
+	// Criando as variaveis para guardar cada octeto
+	private String oc1 = octetos[0];
+	private String oc2 = octetos[1];
+	private String oc3 = octetos[2];
+	private String oc4 = octetos[3];
+
+	// convertendo o Oc1 para int
+	int validOc1 = Integer.parseInt(octetos[0]);
+
+	public void setIp(String ip) {
+		this.ip = ip;
+	}
+
+	public String getIp() {
+		return ip;
+	}
+
 }
